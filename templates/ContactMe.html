@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Contact Me</title>
+    <link href="../static/css/style.css" rel="stylesheet" type="text/css" />
+    <meta name="author" content="Xinyi Yan" />
+    <meta charset="utf-8" />
+    <style>
+        body  {
+            background-image: url("../static/background.jpg");
+            background-repeat: repeat;
+        }
+    </style>
+</head>
+    <body>
+        <div id=”navigation”>
+            <ul id="menu">
+               <li><a href="index"> Home </a></li>
+                <li><a href="about"> About us </a></li>
+                <li><a href="contact"> Contact us </a></li>
+            </ul>
+        </div>
+        <br>
+        <h1>Contact Me</h1>
+            <h2 id="contact_me_notice" style="display:none;">
+                You should fill name, subject, and message.
+            </h2>
+            <p>Name : <input type="text" name="name" id="contact_me_name_id" placeholder="Your name here"></p>
+            <p>Subject : <input type="text" name="subject" id="contact_me_subject_id" placeholder="Hello World"></p>
+            <p>Message : <textarea name="msg" id="contact_me_msg_id"> </textarea></p>
+
+            <button id="contact_me_submit_button">submit</button>
+
+        <footer>
+            <a href="index"> Home </a>
+            <a href="about"> About us </a>
+            <a href="contact"> Contact us </a>
+		</footer>
+
+    <script src="../static/js/script.js"></script>
+    </body>
+</html>
+

@@ -1,3 +1,91 @@
-h1 {
-	color: blue;
+navigation {
+    background-color: #000000;
+    float: left;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+#menu, #menu ul{
+    margin: 0px;
+    padding: 0px;
+    list-style-type: none;
+}
+
+#menu li {
+    float: left;
+}
+
+#menu li a:link,#a:visited {
+    display: block;
+    color: #FFF;
+    background-color: khaki;
+    background-repeat: repeat-x;
+
+    padding: 7px;
+    font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+    text-decoration:none;
+    text-align:center;
+}
+
+#menu li a:hover,#a:active {
+    display: block;
+    color: #FFF;
+    width: 100px;
+    background-color:yellowgreen;
+    padding: 7px;
+    font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+    text-decoration:none;
+    text-align:center;
+}
+
+footer {
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    text-align: center;
+
+}
+
+li p strong {
+    color: red;
+}
+
+.background_index {
+    background-image: url("../src/index.png");
+    background-repeat: repeat;
+}
+
+.background_blog1 {
+    background-image: url("../src/blog1_background.jpg");
+    background-repeat: repeat;
+    background-color: pink;
+}
+
+.background_blog2 {
+    background-image: url("../src/blog2_background.jpg");
+    background-repeat: repeat;
+    background-color: pink;
+}
+
+.background_blog3 {
+    background-image: url("../src/blog3_background.jpeg");
+    background-repeat: repeat;
+    background-color: pink;
+}
+
+.background_blog4 {
+    background-image: url("../src/blog4_background.jpg");
+    background-repeat: repeat;
+    background-color: pink;
+}
+
+.background_blog5 {
+    background-image: url("../src/blog5_background.png");
+    background-repeat: repeat;
+    background-color: pink;
 }
