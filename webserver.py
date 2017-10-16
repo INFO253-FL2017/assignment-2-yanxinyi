@@ -11,7 +11,28 @@ import os
 # "static folder"
 app = Flask(__name__,static_url_path="/static")
 
+
+@app.route('/contactMeFormPost', methods=['POST'])
+def contactMeFormPost():
+    json_data = json.loads(request.data.decode('ascii'))
+    name = json_data['name']
+    msg = json_data['msg']
+    subject = json_data['subject']
+
+    requests.post(
+        "https://api.mailgun.net/v3/" + os.environ["INFO253_MAILGUN_DOMAIN"] + "/messages",
+        auth=(os.environ["INFO253_MAILGUN_USER"], os.environ["INFO253_MAILGUN_PASSWORD"]),
+        data={"from": name + " " + os.environ["INFO253_MAILGUN_FROM_EMAIL"],
+              'to': os.environ["INFO253_MAILGUN_TO_EMAIL"],
+              'subject': subject,
+              'text': msg})
+    return (' ', 200)
+
 @app.route('/')
+def main_page():
+    return render_template("index.html")
+
+
 @app.route('/index')
 def index():
     return render_template("index.html")
@@ -44,18 +65,4 @@ def blog5():
 def contact():
     return render_template("ContactMe.html")
 
-@app.route('/contactMeFormPost', methods=['POST'])
-def contactMeFormPost():
-    json_data = json.loads(request.data.decode('ascii'))
-    name = json_data['name']
-    msg = json_data['msg']
-    subject = json_data['subject']
 
-    requests.post(
-        "https://api.mailgun.net/v3/" + os.environ["INFO253_MAILGUN_DOMAIN"] + "/messages",
-        auth=(os.environ["INFO253_MAILGUN_USER"], os.environ["INFO253_MAILGUN_PASSWORD"]),
-        data={"from": name + " " + os.environ["INFO253_MAILGUN_FROM_EMAIL"],
-              'to': os.environ["INFO253_MAILGUN_TO_EMAIL"],
-              'subject': subject,
-              'text': msg})
-    return (' ', 204)
